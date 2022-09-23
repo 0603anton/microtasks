@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-type NewComponentPoprsType = {
+type NewComponentPropsType = {
     cars: Array<CarType> //CarType[]
 }
 
@@ -10,11 +10,19 @@ type CarType = {
     model: string
 }
 
-export const NewComponent = (props: NewComponentPoprsType) => {
-    debugger
+
+export const NewComponent = (props: NewComponentPropsType) => {
+    let cars = props.cars.map((car, index) => {
+        return (
+            <li key={index}>{`manufacturer: ${car.manufacturer}, model: ${car.model}`}</li>
+        )
+    })
+
     return (
         <div>
-
+            <ul>
+                {cars}
+            </ul>
         </div>
     );
 };
