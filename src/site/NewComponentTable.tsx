@@ -15,16 +15,16 @@ export const NewComponentTable = (props: AnotherCarsType) => {
 
 
         <table>
-            <tr>
-                {props.anotherCars.map((car, index) => {
-                    return (
-                        <tr>
-                            <th>{car.manufacturer}</th>
-                            <td>{car.model}</td>
-                        </tr>
-                    )
-                })}
-            </tr>
+            <tbody>
+            {props.anotherCars.map((car, index) => {
+                return (
+                    <tr key={index + `b`}>
+                        <th>{car.manufacturer}</th>
+                        <td>{car.model}</td>
+                    </tr>
+                )
+            })}
+            </tbody>
         </table>
     );
 };
